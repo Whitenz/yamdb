@@ -1,4 +1,4 @@
-https://github.com/Whitenz/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
+![Django-app workflow](https://github.com/Whitenz/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
 # YaMDb - база отзывов пользователей о фильмах, книгах и музыке.
