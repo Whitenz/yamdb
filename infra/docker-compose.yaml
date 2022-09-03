@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.3'
 
 services:
   db:
@@ -9,7 +9,7 @@ services:
       - ./.env
 
   web:
-    image: whitenz/api_yamdb:latest
+    image: whitenz/api_yamdb
     restart: always
     volumes:
       - static_value:/app/static/
