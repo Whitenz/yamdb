@@ -38,8 +38,8 @@
 
 #### Клонировать репозиторий и перейти в каталог с файлом docker-compose.yaml:
 ```
-git clone https://github.com/Whitenz/infra_sp2
-cd infra_sp2/infra/
+git clone https://github.com/Whitenz/yamdb_final
+cd yamdb_final/infra/
 ```
 
 #### Создать файл .env с переменными окружения:
@@ -54,7 +54,7 @@ DB_PORT=5432
 
 #### Создать образы и запустить контейнеры:
 ```
-docker-compose up -d --build
+docker-compose up -d
 ```
 
 #### Выполнить миграции:
