@@ -17,6 +17,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          python3 -m pip install --upgrade pip
           pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort
           pip install -r api_yamdb/requirements.txt 
 
@@ -46,6 +47,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
+          context: api_yamdb
           file: api_yamdb/Dockerfile
           tags: whitenz/api_yamdb:latest
 
