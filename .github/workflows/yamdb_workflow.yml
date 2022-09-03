@@ -50,7 +50,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: whitenz/api_yamdb:${{ steps.date.outputs.date }}
+          file: api_yamdb/Dockerfile
+          tags: whitenz/api_yamdb:v${{ steps.date.outputs.date }}
 
   deploy:
       name: Deploy Django-app on server
