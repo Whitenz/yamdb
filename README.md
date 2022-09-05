@@ -54,28 +54,28 @@ DB_PORT=5432
 
 #### Создать образы и запустить контейнеры:
 ```
-docker-compose up -d
+sudo docker-compose up -d
 ```
 
 #### Выполнить миграции:
 ```
-docker-compose exec web python manage.py migrate
+sudo docker-compose exec web python manage.py migrate
 ```
 
 #### Собрать статику:
 ```
-docker-compose exec web python manage.py collectstatic --no-input
+sudo docker-compose exec web python manage.py collectstatic --no-input
 ```
 
 #### Создать суперпользователя:
 ```
-docker-compose exec web python manage.py createsuperuser
+sudo docker-compose exec web python manage.py createsuperuser
 
 ```
 
 #### Заполнить базу данных тестовыми данными:
 ```
-docker-compose exec web python manage.py loaddata fixtures.json
+sudo docker-compose exec web python manage.py loaddata fixtures.json
 
 ```
 
