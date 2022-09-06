@@ -44,6 +44,7 @@ cd yamdb_final/infra/
 
 #### Создать файл .env с переменными окружения:
 ```
+SECRET_KEY=YOUR_SECRET_KEY
 DB_ENGINE=django.db.backends.postgresql
 DB_NAME=postgres
 POSTGRES_USER=postgres
@@ -119,8 +120,6 @@ sudo docker-compose exec web python manage.py loaddata fixtures.json
 /api/v1/users/{username}/- GET, PATCH, DELETE
 /api/v1/users/me/ - GET, PATCH
 ```
-
-Доступ для чтения возможен с моделью Post, Group, Comment. В ином случае доступ через JSON Web Token.
 
 ### Пример запроса к API
 
