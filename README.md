@@ -82,11 +82,80 @@ sudo docker-compose exec web python manage.py loaddata fixtures.json
 ✨ Поздравляю ✨ <br>
 Приложение запущено и готово к работе.
 
+## Эндпоинты API
+- Регистрация пользователей и выдача токенов
+```
+/api/v1/auth/signup/ - POST
+/api/v1/auth/token/ - POST
+```
+- Категории произведений
+```
+/api/v1/categories/- GET, POST
+/api/v1/categories/{slug}/ - DEL
+```
+- Категории жанров
+```
+/api/v1/genres/ - GET, POST
+/api/v1/genres/{slug}/ - DELETE
+```
+- Произведения, к которым пишут отзывы
+```
+/api/v1/titles/ - GET, POST
+/api/v1/titles/{titles_id}/ - GET, PATCH, DELETE
+```
+- Отзывы к произведениям
+```
+/api/v1/titles/{title_id}/reviews/ - GET, POST
+/api/v1/titles/{title_id}/reviews/{review_id}/ - GET, PATCH, DELETE
+```
+- Комментарии к отзывам
+```
+/api/v1/titles/{title_id}/reviews/{review_id}/comments/ - GET, POST
+/api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/ - GET, PATCH, DELETE
+```
+- Пользователи
+```
+/api/v1/users/ - GET, POST
+/api/v1/users/{username}/- GET, PATCH, DELETE
+/api/v1/users/me/ - GET, PATCH
+```
+
+Доступ для чтения возможен с моделью Post, Group, Comment. В ином случае доступ через JSON Web Token.
+
+### Пример запроса к API
+
+Список всех отзывов
+```
+curl -X GET 'http://localhost/api/v1/categories/'
+```
+Ответ
+```
+{
+    "count": 3,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "name": "Книга",
+            "slug": "book"
+        },
+        {
+            "name": "Музыка",
+            "slug": "music"
+        },
+        {
+            "name": "Фильм",
+            "slug": "movie"
+        }
+    ]
+}
+```
 
 ## Стек технологий
 - Django
 - PyJWT
 - djoser
+- postgresql
 - nginx
 - gunicorn
 - docker
